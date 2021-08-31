@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pytorch로 시작하는 딥러닝 입문 (1)Package 구성
+title: Pytorch로 시작하는 딥러닝 입문 (1) Package 구성
 categories: [PyTorch]
 ---
 
@@ -25,7 +25,8 @@ Numpy와 유사한 구조.<br><br>
 ## 3. torch.nn
 ---
 신경망 구축 시 쓰이는 모델 구조나 레이어 정의되어 있음. (ex: RNN, LSTM, ReLU, MSELoss, Conv layer 등)<br>
-모델을 직접 구축할 때에는 모델 클래스 선언시 nn.Module 상속해야함
+모델을 직접 구축할 때에는 모델 클래스 선언시 nn.Module 상속해야함 
+<br><br>
 
 ```python
 import torch.nn as nn
@@ -40,15 +41,16 @@ class Model(nn.Module):
 
 ## 4. torch.optim
 ---
-SGD(Stochastic Gradient Descent)를 중심으로한 파라미터 최적화 알고리즘 구현됨.
-<br>
-optimizer object로 만들어지며 계산된 gradient를 이용하여 parameter update 수행함.
+SGD(Stochastic Gradient Descent)를 중심으로한 파라미터 최적화 알고리즘 구현됨.<br>
+optimizer object로 만들어지며 계산된 gradient를 이용하여 parameter update 수행. <br>
 ```python
 from torch import optim
 
 optimizer = optim.SGD(model.parameter(), lr=0.01, momentum=0.9)
 optimizer = optim.Adam([var1, var2], lr=0.0001)
 ```
+<br>
+
 Optimizer를 이용해서 parameter update 할 시 `optim.step()` 이용해서 update함.
 ```python
 for input, target in dataset:
@@ -73,6 +75,7 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
            worker_init_fn=None, *, prefetch_factor=2,
            persistent_workers=False)
 ```
+<br>
 블로그 시작 얼마 전, Transformer 코드를 만들려 할 때, 이 `DataLoader` 때문에 꽤나 고생했다. 제대로 한번 알아봐야 된다고 생각하는데 이건 나중에 따로 정리해야겠다.
 <br>
 <br>
