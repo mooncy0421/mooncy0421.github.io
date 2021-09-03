@@ -4,6 +4,8 @@ title: PyTorch로 시작하는 딥러닝 입문 (3) Class
 categories: [PyTorch]
 ---
 
+---
+
 이번 포스팅에서는 class에 대해서 알아볼 것이다. PyTorch에서 구현한 모델들의 대부분은 class로 구현되어 있다. <br>
 딥러닝 모델 뿐만 아니라 다양한 기능들 또한 대부분 class로 구현되어 있다. 그만큼 class는 python에서 상당히 중요한 부분이다.<br>
 

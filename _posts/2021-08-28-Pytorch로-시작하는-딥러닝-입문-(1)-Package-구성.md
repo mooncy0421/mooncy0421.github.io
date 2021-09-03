@@ -1,7 +1,9 @@
 ---
 layout: post
-title: Pytorch로 시작하는 딥러닝 입문 (1) Package 구성
+title: PyTorch로 시작하는 딥러닝 입문 (1) Package 구성
 categories: [PyTorch]
+---
+
 ---
 
 이 글을 시작으로 Wikidocs [Pytorch로 시작한는 딥러닝 입문](https://wikidocs.net/book/2788)을 공부한 내용을 포스팅할 것이다.  

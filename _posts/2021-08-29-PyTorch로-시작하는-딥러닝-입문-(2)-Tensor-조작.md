@@ -3,6 +3,9 @@ layout: post
 title: PyTorch로 시작하는 딥러닝 입문 (2) Tensor 조작
 categories: [PyTorch]
 ---
+
+---
+
 <br>
 두번째 포스팅이다. <br>
 첫번째 포스팅에서는 PyTorch 패키지 구성에 대해 간단하게 정리해봤고, <br>
