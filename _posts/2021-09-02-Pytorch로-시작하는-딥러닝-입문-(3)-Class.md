@@ -83,12 +83,12 @@ class Class_Name():
         ...
 ```
 
-위의 예시에서 불 수 있듯이 클래스의 선언 시에는 ```__init__```을 통해 클래스를 초기화해주어야 한다. 클래스를 이용해 객체를 선언하게 되면 <br>
-클래스 내부에서는 ```__init__``` 초기화 함수를 이용해서 객체가 사용하게 될 클래스 내의 메소드, 변수와 같은 속성들을 초기화 해준다. <br>
-클래스 메소드들은 객체를 생성한 후 각 객체끼리 서로 영향을 주지 않고 독립적으로 사용된다. <br>
+위의 예시에서 불 수 있듯이 클래스의 선언 시에는 ```__init__```을 통해 클래스를 초기화해주어야 한다. 클래스를 이용해 객체를 <br>
+선언하게 되면 클래스 내부에서는 ```__init__``` 초기화 함수를 이용해서 객체가 사용하게 될 클래스 내의 메소드, 변수와 같은 속성들을 <br>
+초기화 해준다. 클래스 메소드들은 객체를 생성한 후 각 객체끼리 서로 영향을 주지 않고 독립적으로 사용된다. <br>
 그리고 ```__init__``` 초기화 함수를 보면 ```self.class_var```와 ```class_var3```을 볼 수가 있는데, 이는 각각 인스턴스 속성(instance attribute), <br>
-클래스 속성(class attribute)이라고 부른다. 인스턴스 속성은 각 객체별로 따로 갖게 되지만 클래스 속성은 동일한 클래스로 선언된 객체들은 <br>
-모두 동일한 속성을 갖게 된다.
+클래스 속성(class attribute)이라고 부른다. 인스턴스 속성은 각 객체별로 따로 갖게 되지만 클래스 속성은 동일한 클래스로 선언된 <br>
+객체들은 모두 동일한 속성을 갖게 된다.
 
 ```python
 cls1 = Class_Name()  # Generate object cls1
@@ -103,10 +103,11 @@ cls2.class_method(params)  # cls2만의 메소드 (cls1.class_method와 서로 �
 ## 2) 상속 (Inheritance)
 ---
 
-클래스에는 상속이라는 개념도 있는데, 이는 물려주는 클래스(Super class, Parent class)의 내용을 물려받는 클래스(Sub class, Child class)가 갖게 되는 것이다. <br>
-딥러닝 모델을 만들 때에는 보통은 PyTorch의 ```nn.Module``` 클래스를 상속받아 모델을 만든다. ```nn.Module``` 클래스를 물려받으며 해당 클래스의 여러가지 <br>
-유용한 기능들을 상속받을 수 있으며, 그로 인해 좀 더 쉽게 딥러닝 모델을 만들 수 있게 된다. <br>
-상속받은 Sub class는 별도의 메소드 정의 없이 Super class의 메소드를 사용할 수 있게 되며 속성 또한 사용할 수 있게 된다. <br>
+클래스에는 상속이라는 개념도 있는데, 이는 물려주는 클래스(Super class, Parent class)의 내용을 물려받는 클래스<br>
+(Sub class, Child class)가 갖게 되는 것이다. 딥러닝 모델을 만들 때에는 보통은 PyTorch의 ```nn.Module``` 클래스를 상속받아 모델을 만든다. <br>
+```nn.Module``` 클래스를 물려받으며 해당 클래스의 여러가지 유용한 기능들을 상속받을 수 있으며, <br>
+그로 인해 좀 더 쉽게 딥러닝 모델을 만들 수 있게 된다. 상속받은 Sub class는 별도의 메소드 정의 없이 <br> 
+Super class의 메소드를 사용할 수 있게 되며 속성 또한 사용할 수 있게 된다. <br>
 
 ```python
 import torch.nn as nn
@@ -123,7 +124,7 @@ class Model(nn.Module):
         return F.relu(self.layer2(x))
 ```
 
-위읰 코드는 ```nn.Module``` 클래스를 상속받는 딥러닝 모델의 간단한 예시이다. 코드는 [PyTorch Docs](https://pytorch.org/docs/stable/generated/torch.nn.Module.html?highlight=nn%20module#torch.nn.Module)에서 볼 수 있다. <br>
+위의 코드는 ```nn.Module``` 클래스를 상속받는 딥러닝 모델의 간단한 예시이다. 코드는 [PyTorch Docs](https://pytorch.org/docs/stable/generated/torch.nn.Module.html?highlight=nn%20module#torch.nn.Module)에서 볼 수 있다. <br>
 ```nn.Module```을 상속받는 모델들은 항상 ```__init__```과 ```forward``` 메소드를 선언해 주어야한다. <br>
 ```nn.Module```을 상속받은 모델은 따로 ```Conv2d``` 메소드를 선언하지 않았음에도 Conv2d 메소드를 사용할 수 있게되고, <br>
 다른 유용한 기능들 또한 사용 가능해진다.<br><br><br><br>
