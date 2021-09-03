@@ -9,7 +9,7 @@
   background-color: #f92672;
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
-  color: #75715e;
+  color: #14a800;
 }
 .highlight .cp {
   color: #f4bf75;
@@ -78,4 +78,8 @@
 }
 .highlight .ss {
   color: #a6e22e;
+}
+
+.highlight .nf {
+  color:#8bf6fa;
 }
