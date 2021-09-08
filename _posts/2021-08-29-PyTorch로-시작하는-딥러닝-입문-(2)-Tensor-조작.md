@@ -6,35 +6,38 @@ categories: [PyTorch]
 
 ---
 
-<br>
 두번째 포스팅이다. <br>
 첫번째 포스팅에서는 PyTorch 패키지 구성에 대해 간단하게 정리해봤고, <br>
 이번에는 텐서 조작에 대해 살펴볼 거다.<br>
-Wikidocs에서는 2장 2절 ~ 2장 3절 내용에 해당한다. 우선 간단하게 정리할 내용을 살펴보자면 다음과 같다. <br>
+Wikidocs에서는 2장 2절 ~ 2장 3절 내용에 해당한다. 우선 간단하게 정리할 내용을 살펴보자면 다음과 같다. <br> <br>
 
-+ ### Vector / Matrix / Tensor 각각의 특징
-+ ### Tensor Allocation
-+ ### Basic Operations & Methods
++  __Vector / Matrix / Tensor 각각의 특징__
++ __Tensor Allocation__
++ __Basic Operations & Methods__ <br><br>
+
  위의 순서로 정리할 것이며, [wikidocs](https://wikidocs.net/52460) 의 순서와 같다.
- <br><br>
- # __1. Vector / Matrix / Tensor 각각의 특징__
- PyTorch로 코딩을 하게되면 가장 자주 다루게 되는 단위는 벡터, 행렬, 텐서이다. 자연어 처리에서는 단어를 벡터로 표현하고, 문장을 벡터화된 단어로 표현, 그리고 그를 배치로 만들어 학습에 쓰므로 결국 텐서 단위를 가장 많이 접하고 다룰 것이라 생각한다. <br><br>
+ <br><br><br>
 
- <img src="./assets/img/PyTorch_wikidocs/vector_matrix_tensor_img.png" width="450px" height="300px"></img> <br><br>
+ # __1. Vector / Matrix / Tensor 각각의 특징__ <br>
+PyTorch로 코딩을 하게되면 가장 자주 다루게 되는 단위는 벡터, 행렬, 텐서이다. 자연어 처리에서는 단어를 벡터로 표현하고, <br>
+문장을 벡터화된 단어로 표현, 그리고 그를 배치로 만들어 학습에 쓰므로 결국 텐서 단위를 가장 많이 접하고 다룰 것이라 생각한다. <br><br>
 
-+ ## Scalar
+![vector_matrix_tensor](/assets/img/PyTorch_wikidocs/vector_matrix_tensor_img.png)<br><br>
+
++ #### Scalar
 위의 그림에는 없으나 간단하게 말하자면 차원이 없는 값이다. 그냥 변수값 하나라고 생각하면 될 것 같다. 
 <br><br>
 
-+ ## Vector
++ #### Vector
 벡터는 위의 그림에서 1D로 되어있는 형태로 표시된다. 1차원으로 구성된 값이며, scalar 값들이 일렬로 나열된 구조라 생각하면 될 것 같다.
 <br><br>
 
-+ ## Matrix
++ #### Matrix
 행렬 (Matrix)는 그림에서 2D로 되어있는 형태로 표시된다. 
 <br><br>
 
-+ ## Tensor
++ #### Tensor
+
 텐서는 그림에서 3D 이상의 차원을 가진 형태이다. 4D 이상은 생각해내기 어려워 3D 텐서를 쌓은 것으로 표현했다.
 <br><br><br>
 
@@ -45,9 +48,8 @@ Wikidocs에서는 2장 2절 ~ 2장 3절 내용에 해당한다. 우선 간단하
 + ## 2D Tensor
 ---
 
-|Tensor| = (batch size, dimension)<br>
-
-![2D Tensor](./assets/img/PyTorch_wikidocs/2d_tensor_img.png "2D Tensor")
+|Tensor| = (batch size, dimension)<br><br>
+![2D Tensor](/assets/img/PyTorch_wikidocs/2d_tensor_img.png "2D Tensor")
 
 2차원 텐서에서 각 행 하나는 하나의 벡터 형태의 데이터를 표현하고 각 열들은 벡터의 feature값을 나타낸다. 
 <br><br>
@@ -55,8 +57,10 @@ Wikidocs에서는 2장 2절 ~ 2장 3절 내용에 해당한다. 우선 간단하
 + ## 3D Tensor (In NLP)
 ---
 
-|Tensor| = (batch size, sequence length, dimension)<br>
-![3D Tensor](./assets/img/PyTorch_wikidocs/3d_tensor_img.png "3D Tensor")
+|Tensor| = (batch size, sequence length, dimension)<br><br>
+![3D Tensor](/assets/img/PyTorch_wikidocs/3d_tensor_img.png "3D Tensor")
+
+
 3차원 텐서는 위와 같이 나타낸다. 하나의 배치는 각각 dimension 크기만큼의 feature 수를 갖는 토큰들이 sequence length 길이의 sequence를 갖는다.
 <br><br><br>
 
@@ -164,7 +168,7 @@ Broadcasting 기능도 매우 중요하고 유용한 기능이라 생각하는�
 (ex: [1,2] + [3] => [1,2]+[3,3] = [4,5])
 크기가 다른 행렬일 경우에도 브로드캐스팅하게 되면 조건에 맞춰 크기를 바꾼다.<br>
 
-![Broadcasting](./assets/img/braodcast_visualization_img.png "Broadcasting example")
+![Broadcasting](/assets/img/PyTorch_wikidocs/braodcast_visualization_img.png "Broadcasting example")
 
 위의 그림은 브로드캐스팅을 시각화 한 것인데, 그림에서 흐릿하게 처리된 부분이 브로드캐스팅 된 부분이라고 생각하면 된다. <br><br>
 하지만 브로드캐스팅을 할 때에도 조건이 있다.<br>
@@ -362,7 +366,7 @@ tensor([[1],
 Type casting 기느은 아직은 사용하는 것을 못봤다. 왠지 쓸일이 크게 없을 것 같은 느낌도 들긴하지만 크게 어려워 보이지는 않아서 알아만 보고 넘어가려 한다.<br>
 텐서는 여러가지 자료형을 가질 수 있는데, 흔히 쓰는 소수값을 원소로 갖는 float tensor나 정수값을 원소로 갖는 int tensor등 여러가지 자료형을 가질 수 있다.<br>
 
-![Type Casting](./assets/img/typecasting_img.png "Type Casting")
+![Type Casting](/assets/img/PyTorch_wikidocs/typecasting_img.png "Type Casting")
 
 위 표에서 볼 수 있듯이 여러가지 자료형이 있으며 선언은 이 때까지 하던방식과 유사하다. 그저 ```torch.Tensor``` 대신에 ```FloatTensor```, ```LongTensor``` 등을 쓰면 된다. <br><br>
 또는 만들어진 텐서의 자료형을 변경하는 방법도 있다. 만들어진 텐서 뒤에 ```.float()```이나 ```.long()```과 같이 붙여주면 자료형을 바꿔 줄 수 있다.<br><br>
