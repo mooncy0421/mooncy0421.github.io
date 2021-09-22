@@ -44,7 +44,7 @@ task별 데이터셋을 이용한 추가 학습과 하이퍼파라미터 재조�
 
 BERT는 앞서 말했듯이 Transformer Encoder를 이용해 모델을 설계했는데, Encoder만을 떼서 여러 층으로 쌓아 BERT를 구성했다. <br>
 <p align="center">
-  <img src="/assets/img/paper/BERT/model_architecture_img.png" >
+  <img src="/assets/img/paper/BERT/model_architecture_img.PNG" >
 </p>
 그림과 같이 단어 임베딩이 입력으로 주어지면 Transformer Encoder layer(Trm)들을 통과하여 결과값을 도출하게 된다. BERT는 <br>
 모델의 크기에 따라서 BERT Base, BERT Large 두 가지를 만들었는데, Base 버전은 12개, Large버전은 24개의 encoder를 쌓았다. <br>
@@ -74,7 +74,7 @@ WordPiece embedding과 [CLS], [SEP] token들을 이용해서 시퀀스를 표현
 위치 정보 전달을 위한 Positional Embedding 또한 더해져야한다. 그리고 앞서 말했던 Segment Embedding을 통해 문장간 구분을<br>
 지어준다. 결국 BERT의 입력은 다음 그림과 같게 된다.
 <p align="center">
-  <img src="/assets/img/paper/BERT/input_representation_img.png">
+  <img src="/assets/img/paper/BERT/input_representation_img.PNG">
 </p>
 Token Embedding, Segment Embedding과 Position Embedding 셋을 더해서 BERT의 최종 입력으로 사용한다. 입력된 시퀀스의 [CLS]<br>
 토큰은 일련의 계산과정을 거친 후 마지막에 출력되는 hidden vector에서 $$C$$로 표기되고 추후 말할 pre-training에서 사용된다.<br>
@@ -114,7 +114,7 @@ Pre-training 이후에는 fine-tuning 단계가 이어지는데 각각의 NLP ta
 fine-tuning은 Transformer의 self-attention 매커니즘 덕분에 꽤 단순해진다. 또한 pre-training에 비해 계산 비용도 저렴하다. <br>
 각 task별로 fine-tuning이 어떻게 진행되는지 살펴보자. <br>
 <p align="center">
-  <img src="/assets/img/paper/BERT/fine_tuning_img.png">
+  <img src="/assets/img/paper/BERT/fine_tuning_img.PNG">
 </p>
 <br>
 위의 그림에서는 우선 4가지 NLP task들의 fine-tuning을 설명하고 있는데, 순서대로 Sentence Pair Classification, Single Sentence<br>
@@ -125,7 +125,7 @@ BERT의 fine-tuning은 여러가지 데이터셋을 이용해서 실험되었다
 #### GLUE (General Language Understanding Evaluation)
 GLUE는 다양한 NLU task들을 모아놓은 데이터셋이다. 실험 결과는 아래의 표와 같다. <br>
 <p align="center">
-  <img src="/assets/img/paper/BERT/GLUE_result_img.png">
+  <img src="/assets/img/paper/BERT/GLUE_result_img.PNG">
 </p>
 결과를 보면 BERT base와 large 모두 이전 모델들의 성능을 크게 능가했다. 또한 주목해야할 점은 BERT large 모델이 BERT base <br>
 모델의 성능을 모두 능가했다는 것인데, 이는 훈련 데이터 양이 적은 task에서도 같은 결과를 보인다. 모델 크기와 성능의 관계는 <br>
@@ -135,13 +135,13 @@ ablation study 부분을 볼 때 다루겠다. <br><br>
 Stanford 대학에서 만든 QA task 데이터셋이다. 질문과 지문이 주어지면 지문에서 질문에 걸맞는 답을 예측하는 방식으로 수행된다. <br>
 QA task에서도 BERT는 새로운 SoTA를 갱신한다. <br>
 <p align ="center">
-  <img src="/assets/img/paper/BERT/SQuAD_result_img.png" width="450" height="400">
+  <img src="/assets/img/paper/BERT/SQuAD_result_img.PNG" width="450" height="400">
 </p>
 위의 결과 표를 보면 TriviaQA라는 것이 있는데 이는 SQuAD 데이터셋을 학습시키기 전에 먼저 공개 데이터인 TriviaQA로 학습한 <br>
 것이다. 하지만 이러한 추가적인 학습 데이터가 없어도 이미 BERT는 기존 모델의 결과를 크게 능가한다. <br><br>
 SQuAD v2.0 또한 v1.1과 같이 BERT가 이전의 모델들 보다 더 좋은 성능을 보인다.<br>
 <p align="center">
-<img src="/assets/img/paper/BERT/SQuAD2_result_img.png" width="480" height="400">
+<img src="/assets/img/paper/BERT/SQuAD2_result_img.PNG" width="480" height="400">
 </p>
 
 <br><br>
@@ -150,7 +150,7 @@ SQuAD v2.0 또한 v1.1과 같이 BERT가 이전의 모델들 보다 더 좋은 �
 SWAG은 grounded common-sense inference라고 하는 task의 데이터셋이다. 이는 간단하게 말하자면 문장 A 다음에 올 문장 B를 <br>
 4개의 후보 문장 중에서 가장 그럴듯한 것으로 선택하는 task다. SWAG으로 fine-tuning한 결과 마찬가지로 SoTA값을 달성했다. <br>
 <p align="center">
-  <img src="/assets/img/paper/BERT/SWAG_result_img.png">
+  <img src="/assets/img/paper/BERT/SWAG_result_img.PNG">
 </p>
 <br><br>
 
@@ -160,7 +160,7 @@ BERT의 저자는 여러 부분에 대해서 ablation study를 진행했다. <br
 __4-1) Effect of Pre-training tasks(NSP, MLM)__
 
 <p align="center">
-  <img src="/assets/img/paper/BERT/ablation_study_img.png">
+  <img src="/assets/img/paper/BERT/ablation_study_img.PNG">
 </p>
 
 저자는 우선 pre-training 단계에서 학습을 위해 사용되는 task들이 성능에 어느정도 영향을 미치는지 실험했다. 실험 결과 <br>
@@ -170,7 +170,7 @@ NSP와 MLM 둘 중 하나라도 빠지게 되면 꽤나 성능이 하락하는 �
 __4-3) Effect of Model size__
 
 <p align="center">
-  <img src="/assets/img/paper/BERT/ablation_model_size_img.png">
+  <img src="/assets/img/paper/BERT/ablation_model_size_img.PNG">
 </p>
 
 또한 모델의 크기가 성능에 어느정도 영향을 미치는지에 대해서도 실험했다. 표를 보면 모델의 크기가 커지면 커질수록 모델의 성능 <br>
@@ -183,7 +183,7 @@ __4-3) Effect of Model size__
 __4-4) Feature-based Approach with BERT__
 
 <p align="center">
-  <img src="/assets/img/paper/BERT/ablation_feature_based_img.png" height="500" width="550">
+  <img src="/assets/img/paper/BERT/ablation_feature_based_img.PNG" height="500" width="550">
 </p>
 
 BERT는 앞서 설명했듯 fine-tuning 방식으로 downstream task들을 수행한다. 이번 실험에서는 fine-tuning이 아닌 feature-based <br>
@@ -195,7 +195,7 @@ BERT는 fine-tuning 방식을 사용했을 때만이 아니라 feature-based app
 
 __4-5) Effect of Number of Training Steps__
 <p align="center">
-  <img src="/assets/img/paper/BERT/ablation_num_training_img.png" height="500" width="650">
+  <img src="/assets/img/paper/BERT/ablation_num_training_img.PNG" height="500" width="650">
 </p>
 
 BERT는 pre-training 횟수에 따라 성능이 차이가 난다. 위의 표는 서로 다른 pre-training 횟수에 따라 MNLI 데이터셋의 성능 차를 <br>
@@ -204,7 +204,7 @@ BERT는 pre-training 횟수에 따라 성능이 차이가 난다. 위의 표는 
 
 __4-6) Ablation of Different Masking Procedure__
 <p align="center">
-  <img src="/assets/img/paper/BERT/ablation_masking_img.png">
+  <img src="/assets/img/paper/BERT/ablation_masking_img.PNG">
 </p>
 
 앞에서 BERT pre-training task중 MLM을 설명할 때 pre-training과 fine-tuning간의 괴리감을 줄이기 위해 일정 비율로 마스킹을 <br>
