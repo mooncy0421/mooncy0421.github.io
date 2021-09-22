@@ -30,7 +30,7 @@ Transformer 또한 전반적인 encoder-decoder구조를 여러개의 encoder, d
 살펴보려한다.<br>
 
 <p align="center">
-  <img src="/assets/img/paper/Transformer/enc_dec_img.png" height="600" width="450">
+  <img src="/assets/img/paper/Transformer/enc_dec_img.PNG" height="600" width="450">
 </p>
 
 <br><br>
@@ -64,7 +64,7 @@ Attention mechanism은 2016년에 나온 [논문](https://arxiv.org/pdf/1409.047
 신경망에서는 각 토큰간의 dependency를 구하려면 토큰 사이의 sequential 연산을 다 해야하는 반면, self-attention은 그 과정이 <br>
 필요없다. 그로 인해서 더 수월하게 long-term dependency를 학습할 수 있게된다.<br>
 <p align="center">
-  <img src="/assets/img/paper/Transformer/Attn_table_img.png">
+  <img src="/assets/img/paper/Transformer/Attn_table_img.PNG">
 </p>
 위의 표는 각 layer 종류별 복잡도, sequential operation 수, 최대 경로 길이를 나타낸 것이다. 표에서 n은 sequence length, d는 <br>
 dimension 수, k는 kernel size를, r은 restricted self-attention에서 window size 이다. Restricted self-attention은 매우 긴 sequence가<br>
@@ -75,7 +75,7 @@ dimension보다 작기 때문에 self-attention이 recurrent 보다 빠르다. �
 
 #### Scaled Dot-Product Attention
 <p align="center">
-  <img src="/assets/img/paper/Transformer/Attn_img.png">
+  <img src="/assets/img/paper/Transformer/Attn_img.PNG">
 </p>
 
 $$ Attention(Q,K,V) = softmax({QK^T \over {\sqrt{d_k}}})V $$
@@ -88,7 +88,7 @@ V는 $$d_v$$의 dimension을 가진다. 계산은 우선 Q와 K의 dot-product�
 
 #### Multi-Head Attention
 <p align="center">
-  <img src="/assets/img/paper/Transformer/MultiheadAttn_img.png">
+  <img src="/assets/img/paper/Transformer/MultiheadAttn_img.PNG">
 </p>
 
 저자는 하나의 scaled dot-product attention을 $$d_{model}$$ 차원의 Q, K, V에서 수행하는 것 보다 각기 다른 차원의 선형 변환을 이용하여 <br>
@@ -145,7 +145,7 @@ Transformer는 recurrence한 부분이나 convolution이 없기 때문에 입력
 positional encoding을 이용해서 시퀀스내 각 토큰의 위치 정보를 얻고자했다. Positional encoding은 token embedding에 더해져서<br>
 transformer의 입력으로 사용된다. 
 <p align="center">
-  <img src="/assets/img/paper/Transformer/pos_enc_img.png">
+  <img src="/assets/img/paper/Transformer/pos_enc_img.PNG">
 </p>
 Positional encoding은 token embedding에 더해서 사용하기 때문에 token embedding의 차원 수와 같은 $$d_{model}$$의 차원을 갖는다.<br>
 Positional encoding을 만드는 방법에는 absolute position 또는 relative position을 이용하는데 transformer에서는 relative를 <br>
