@@ -5,6 +5,7 @@ categories: [Paper]
 ---
 
 ---
+
 이번에 정리할 논문은 **Attention is All You Need**이다. 사실 BERT 리뷰 이전에 이 논문부터 정리하고 가는게 맞았을 건데 블로그를 <br>
 시작할 쯤 읽던 논문이 BERT라서 먼저 포스팅했다. <br>
 Attention is All You Need 논문은 Transformer 구조를 처음 제안한 논문으로 상당히 유명하며 최근의 NLP 분야에서 핵심으로 쓰이는 <br>
