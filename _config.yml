@@ -86,4 +86,4 @@ exclude:
 
 
 # CATEGORIES
-category_list: [ PyTorch, NLP Paper]
+category_list: [ PyTorch, NLP Paper, Project]
