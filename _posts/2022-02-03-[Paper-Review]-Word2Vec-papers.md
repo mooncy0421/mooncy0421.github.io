@@ -54,13 +54,13 @@ Word2Vec 모델은 NPLM 모델에서 projection layer를 없애 더 단순화시
 Word2Vec 논문에서는 CBOW와 Skip-gram 두 가지 모델을 소개한다. 우선 **CBOW**란 Continuous bag-of-words의 약자이다. 학습 방식은 중심단어를 기준으로 이전 N개 단어와 이후 N개 단어를 이용해 중심 단어가 무엇인지를 예측하며 학습한다. <br>
 
 <p align="center">
-  <img src="/assets/img/paper/word2vec/CBOW_img.PNG">
+  <img src="/assets/img/paper/word2vec/CBOW_img.png">
 </p>
 
 그리고 **Skip-gram**은 CBOW와는 반대로 중심 단어가 주어지고, 해당 중심단어 이전, 이후의 각 N개 이하의 단어들을 예측하며 학습한다. <br>
 
 <p align="center">
-  <img src="/assets/img/paper/word2vec/Skipgram_img.PNG">
+  <img src="/assets/img/paper/word2vec/Skipgram_img.png">
 </p>
 
 저자에 의하면 CBOW는 이전, 이후 각 4개의 단어가 주어졌을 때 가장 성능이 좋았고, Skip-gram은 이전, 이후 각 5개 이하의 랜덤한 단어를 예측할 때 가장 성능이 좋았다고 한다. <br><br>
@@ -70,7 +70,7 @@ Word2Vec 논문에서는 CBOW와 Skip-gram 두 가지 모델을 소개한다. �
 모델의 코드를 보면 알 수 있듯이 단순히 one-hot으로 나타낸 단어를 word vector size로 projection후 다시 각 단어별 값으로 나타내 준다. 상당히 단순한 구조로 좋은 성능을 이끌어내는 것이 꽤 놀라웠다.
 
 <p align="center">
-  <img src="/assets/img/paper/word2vec/word2vec_comparison_table.PNG">
+  <img src="/assets/img/paper/word2vec/word2vec_comparison_table.png">
   <br>< Comparison on the Semantic-Syntactic Word Relationship Test >
 </p>
 
@@ -134,7 +134,7 @@ $$ \text{score}(w_i, w_j) = {\text{count}(w_i, w_j) - \delta \over \text{count}(
 Word2Vec의 각 Extension에 대한 결과는 다음과 같다. 우선 Negative Sampling과 Hierarchical Softmax의 비교는 Negative Sampling이 좀 더 우세한 것으로 나타났다. <br>
 
 <p align="center">
-  <img src="/assets/img/paper/word2vec/NEG_HS_table.PNG">
+  <img src="/assets/img/paper/word2vec/NEG_HS_table.png">
 </p>
 
 NEG-k에서 k는 negative sample의 갯수를 말한다. <br><br>
@@ -142,7 +142,7 @@ NEG-k에서 k는 negative sample의 갯수를 말한다. <br><br>
 Phrase 학습의 효과는 다음과 같이 나타났다. <br>
 
 <p align="center">
-  <img src="/assets/img/paper/word2vec/phrase_learn_table.PNG">
+  <img src="/assets/img/paper/word2vec/phrase_learn_table.png">
   <br>< Accuracies on the phrase analogy dataset >
 </p>
 

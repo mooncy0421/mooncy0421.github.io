@@ -41,7 +41,7 @@ Attention mechanism은 target sentence의 각 단어들은 source sentence의 �
 ### Decoder
 
 <p align="center">
-  <img src="/assets/img/paper/attention/decoder_archtecture_img.PNG" height="300" width="230"> <br>
+  <img src="/assets/img/paper/attention/decoder_archtecture_img.png" height="300" width="230"> <br>
   < Decoder Architecture >
 </p>
 
@@ -77,7 +77,7 @@ Encoder는 Bidirectional RNN으로 구성되어 있다. 이는 forward hidden st
 저자는 우선 긴 문장에 대한 성능 평가를 진행했다. <br>
 
 <p align="center">
-  <img src="/assets/img/paper/attention/exp_length_img.PNG">
+  <img src="/assets/img/paper/attention/exp_length_img.png">
   <br>
 </p>
 
@@ -85,14 +85,14 @@ Encoder는 Bidirectional RNN으로 구성되어 있다. 이는 forward hidden st
 결과를 보면 **RNNsearch-50**은 예측할 문장의 길이가 길어지더라도 성능의 변화가 거의 없는데에 반해 **RNNenc** 모델들은 문장 길이가 30이 넘어가기 시작하는 부근부터 성능이 급격히 나빠지는 것을 볼 수 있다. <br><br>
 
 <p align="center">
-  <img src="/assets/img/paper/attention/compare_Moses_img.PNG" height="150" width="300"> 
+  <img src="/assets/img/paper/attention/compare_Moses_img.png" height="150" width="300"> 
   <br> < BLEU Score compare with SMT >
 </p>
 
 위의 표는 당시 통계기반 번역 모델인 Moses의 BLEU score와 RNNsearch, RNNenc 모델을 비교한 표다. RNNsearch 모델은 당시의 통계기반 모델에 거의 필적한 성능을 나타내었다. 표에서 RNNsearch-50* 모델은 기존 모델에서 더 오랜 시간 학습한 모델인데, 이를 보면 학습을 더 길게할 수록 모델의 성능이 올라감을 알 수 있다. <br><br>
 
 <p align="center">
-  <img src="/assets/img/paper/attention/alignment_table_img.PNG">
+  <img src="/assets/img/paper/attention/alignment_table_img.png">
 </p>
 
 위의 그림은 RNNsearch 모델이 학습한 alignment table을 나타낸 것이다. 그림의 각 부분은 $\alpha_{ij}$인 attention weight를 나타내고, 밝을수록 높은 attention weight를 나타낸다.<br> 논문의 저자가 학습을 진행한 데이터셋은 영어-프랑스어 데이터셋으로 두 언어의 어순은 일부 형용사, 명사의 순서를 제외하고는 거의 똑같다고 볼 수 있다. 이를 미루어보아, alignment table은 영어-프랑스어 사이의 번역 단어간 관계를 잘 나타내고 있다고 볼 수 있다. <br><br><br>
